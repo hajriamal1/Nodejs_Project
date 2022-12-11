@@ -12,7 +12,7 @@ const io = socketio(server);
 const args = parseArgs(process.argv.slice(2));
 const { name = 'default', port = '8080'} = args;
 
-app.use(express.static(path.join(__dirname, 'public')));
+app(express.static(path.join(__dirname, 'public')))
 
 app.get('/api/test', (req, res) => {
   res.json({
